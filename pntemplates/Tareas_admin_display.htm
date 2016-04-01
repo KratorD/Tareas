@@ -1,0 +1,49 @@
+<!--[* $Id: Tareas_admin_modify.htm 31 2011-05-19 Krator $ &nbsp; *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+<!--[pnpageaddvar name="javascript" value="modules/Tareas/pnjavascript/Tareas.js"]-->
+
+<!--[* Tarea *]-->
+<div class="z-admincontainer">
+	<div class="z-adminpageicon"><!--[pnimg modname=core src=windowlist.gif set=icons/large __alt="Tareas" altml=true]--></div>
+	<h2><!--[gt text="Tareas"]--></h2>
+	<p align="center"><!--[gt text="Display work"]--></p>
+
+	<div id="contenido" class="contenido">
+		<div class="fechas">
+			<p><!--[gt text="Created on"]-->:&nbsp;<!--[ $tarea.Creacion|date_format:"%d/%m/%Y" ]--></p>
+			<p><!--[gt text="Last Modification"]-->:&nbsp;
+				<!--[if $tarea.Modificacion ne '0000-00-00']-->
+					<!--[ $tarea.Modificacion|date_format:"%d/%m/%Y" ]-->
+				<!--[/if]-->
+			</p>
+		</div>
+		<h2 class="titulo"><!--[ $tarea.Titulo|pnvarprepfordisplay ]--></h2>
+		<table class="propiedades">
+			<tr>
+				<th id="creador"><!--[gt text="Created by"]-->:&nbsp;</th>
+				<td headers="creador"><!--[ $tarea.Creado_Por|pnvarprepfordisplay ]--></td>
+				<th id="asignado"><!--[gt text="Assigned to"]-->:&nbsp;</th>
+				<td headers="asignado"><!--[ $tarea.Asignado_A|pnvarprepfordisplay ]--></td>
+			</tr>
+			<tr>
+				<th id="prioridad"><!--[gt text="Priority"]-->:&nbsp;</th>
+				<td headers="prioridad"><!--[ $tarea.Prioridad|pnvarprepfordisplay ]--></td>
+				<th id="estado"><!--[gt text="State"]-->:&nbsp;</th>
+				<td headers="estado"><!--[ $tarea.Estado|pnvarprepfordisplay ]--></td>
+			</tr>
+		</table>
+		<!--[if $tarea.Estado eq 'Detenida' || $tarea.Estado eq 'Rechazada']-->
+		<div class="descripcion">
+			<h3 class="desHead"><!--[gt text="Reason"]--></h3>
+			<p><!--[ $tarea.Motivo|pnVarPrepHTMLDisplay ]--></p>
+		</div>
+		<!--[/if]-->
+		<div class="descripcion">
+			<h3 class="desHead"><!--[gt text="Description"]--></h3>
+			<p><!--[ $tarea.Descripcion|pnVarPrepHTMLDisplay ]--></p>
+		</div>
+	</div>
+	<p align="center">
+		<a href="javascript:history.back()"><!--[gt text="Go Back"]--></a>
+	</p>
+</div>

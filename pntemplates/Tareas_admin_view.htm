@@ -1,0 +1,207 @@
+<!--[* $Id: Tareas_admin_view.htm 31 2012-04-17 20:55:41Z Krator $ *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+
+<div class="z-admincontainer">
+	<div class="z-adminpageicon"><!--[pnimg modname=core src=filenew.gif set=icons/large __alt="Tareas" altml=true]--></div>
+	<h2><!--[gt text="Tareas"]--></h2>
+	<p align="center"><!--[gt text="Web Work Administration"]--></p>
+	
+	<form name="frmFiltro" method="post" action="<!--[pnmodurl modname="Tareas" type="admin" func="view"]-->">
+		<fieldset id="fiel"><legend><!--[gt text="Filter"]--></legend>
+			<div align="center"><!--[gt text="Show"]-->:
+				<select name="cmbFiltroEstado" id="cmbFiltroEstado">
+					<option value="Todos"><!--[gt text="All"]--></option>
+					<!--[ foreach from=$estados item=estado ]-->
+						<!--[ if $estado EQ $filtroE ]-->
+							<option selected><!--[ $estado ]--></option>
+						<!--[ else ]-->
+							<option><!--[ $estado ]--></option>
+						<!--[ /if ]-->
+					<!--[ /foreach ]-->
+				</select>&nbsp;
+				<select name="cmbFiltroPrioridad" id="cmbFiltroPrioridad">
+					<option value="Todos"><!--[gt text="All"]--></option>
+					<!--[ foreach from=$prioridades item=prioridad ]-->
+						<!--[ if $prioridad EQ $filtroP ]-->
+							<option selected><!--[ $prioridad ]--></option>
+						<!--[ else ]-->
+							<option><!--[ $prioridad ]--></option>
+						<!--[ /if ]-->
+					<!--[ /foreach ]-->
+				</select>
+				&nbsp;<input type="submit" name="Submit" value="<!--[gt text="Filter"]-->">
+			</div>			  
+		</fieldset>
+	</form>
+	
+<!--[* Crear Tarea *]-->
+	<div align="center">
+		<table width="600" border="0">
+			<tr>
+				<td>
+					<form name="anadir" method="post" action="<!--[pnmodurl modname="Tareas" type="admin" func="new"]-->">
+					  <input type="submit" name="Submit" value="<!--[gt text="Create work"]-->">
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+<!--[* Listado Tareas sin Asignacion *]-->
+	<h3><!--[gt text="Unassigned Tasks"]--></h3>
+	<table class="z-admintable">
+		<thead>
+		<tr>
+			<th><div align="center"><strong><!--[gt text="Name"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Priority"]--></strong></div></th>			
+			<th><div align="center"><strong><!--[gt text="Assigned to"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="State"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Creation"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Modification"]--></strong></div></th>
+			<th><div align="center"></div></th>
+			<th><div align="center"></div></th>
+		</tr>
+		</thead>
+		<tbody>
+		<!--[section name=record loop=$sinAsignacion]-->
+			<!--[if $sinAsignacion[record].Prioridad eq 'Crítica']-->
+			<tr style="background-color: #FF0000;">
+			<!--[elseif $sinAsignacion[record].Prioridad eq 'Alta']-->
+			<tr style="background-color: #FF9950;">
+			<!--[else]-->
+			<tr>
+			<!--[/if]-->
+				<td><!--[ $sinAsignacion[record].Titulo|pnvarprepfordisplay ]--></td>
+				<td><!--[ $sinAsignacion[record].Prioridad|pnvarprepfordisplay ]--></td>				
+				<td><!--[ $sinAsignacion[record].Asignado_A|pnvarprepfordisplay ]--></td>
+				<td><!--[ $sinAsignacion[record].Estado|pnvarprepfordisplay ]--></td>
+				<td><!--[ $sinAsignacion[record].Creacion|date_format:"%d/%m/%Y" ]--></td>
+				<td>
+					<!--[if $sinAsignacion[record].Modificacion ne '0000-00-00']-->
+						<!--[ $sinAsignacion[record].Modificacion|date_format:"%d/%m/%Y" ]-->
+					<!--[/if]-->
+				</td>
+				<td><div align="center">
+					<a href="<!--[pnmodurl modname="Tareas" type="admin" func="display" tid=$sinAsignacion[record].ID]-->">
+					<!--[pnimg modname=core src=14_layer_visible.gif set=icons/extrasmall __title="Display Work" altml=true]-->
+				</div></td>
+				<td><div align="center">
+					<a href="<!--[pnmodurl modname="Tareas" type="admin" func="assignme" tid=$sinAsignacion[record].ID]-->">
+					<!--[pnimg modname=core src=folder_public.gif set=icons/extrasmall __title="Assign me" altml=true]--></a>
+				</div></td>
+			</tr>
+		<!--[sectionelse]-->
+			<tr><td colspan="2"><!--[gt text="No items found."]--></td></tr>
+        <!--[/section]-->
+		</tbody>
+	</table>
+	
+<!--[* Listado Tareas *]-->
+	<p><h3><!--[gt text="All Tasks"]--></h3></p>
+	<table class="z-admintable">
+		<thead>
+		<tr>
+			<th><div align="center"><strong><!--[gt text="Name"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Priority"]--></strong></div></th>			
+			<th><div align="center"><strong><!--[gt text="Assigned to"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="State"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Creation"]--></strong></div></th>
+			<th><div align="center"><strong><!--[gt text="Modification"]--></strong></div></th>
+			<th><div align="center"></div></th>
+			<th><div align="center"></div></th>
+			<th><div align="center"></div></th>
+		</tr>
+		</thead>
+		<tbody>
+		<!--[foreach from=$tareas item=tarea name=conV ]-->
+			<!--[if ( $filtroE NE "Finalizada" AND $tarea.Estado EQ "Finalizada" ) OR 
+					( $filtroE NE "Detenida" AND $tarea.Estado EQ "Detenida" )]-->
+				<!--[* No mostrar las tareas finalizadas si no se especifica *]-->
+			<!--[else]-->
+				<!--[if $tarea.Prioridad eq "Crítica"]-->
+				<tr style="background-color: #BB3333;">
+				<!--[elseif $tarea.Prioridad eq 'Alta']-->
+				<tr style="background-color: #FF9950;">
+				<!--[else]-->
+				<tr>
+				<!--[/if]-->
+					<td><!--[ $tarea.Titulo|pnvarprepfordisplay ]--></td>
+					<td><!--[ $tarea.Prioridad|pnvarprepfordisplay ]--></td>				
+					<td><!--[ $tarea.Asignado_A|pnvarprepfordisplay ]--></td>
+					<td><!--[ $tarea.Estado|pnvarprepfordisplay ]--></td>
+					<td><!--[ $tarea.Creacion|date_format:"%d/%m/%Y" ]--></td>
+					<td>
+						<!--[if $tarea.Modificacion ne '0000-00-00']-->
+							<!--[ $tarea.Modificacion|date_format:"%d/%m/%Y" ]-->
+						<!--[/if]-->
+					</td>
+					<td><div align="center">
+						<a href="<!--[pnmodurl modname="Tareas" type="admin" func="display" tid=$tarea.ID]-->">
+						<!--[pnimg modname=core src=14_layer_visible.gif set=icons/extrasmall __title="Display Work" altml=true]-->				
+					</div></td>
+					<td><div align="center">
+						<a href="<!--[pnmodurl modname="Tareas" type="admin" func="modify" tid=$tarea.ID]-->">
+						<!--[pnimg src=icon_edit.png width=16 height=16 __title="Edit Work"]--></a>
+					</div></td>
+					<td><div align="center">
+						<a href="<!--[pnmodurl modname="Tareas" type="admin" func="delete" tid=$tarea.ID]-->">
+						<!--[pnimg src=icon_delete.png width=16 height=16 __title="Delete Work"]-->
+					</div></td>
+				</tr>
+			<!--[/if]-->
+		<!--[/foreach]-->
+		<!--[foreach from=$tareas item=tarea name=conV ]-->
+			<!--[if $tarea.Estado eq "Detenida" AND $filtroE NE "Detenida"]-->
+			<!--[if $tarea.Prioridad eq "Crítica"]-->
+			<tr style="background-color: #BB3333;">
+			<!--[elseif $tarea.Prioridad eq 'Alta']-->
+			<tr style="background-color: #FF9950;">
+			<!--[else]-->
+			<tr>
+			<!--[/if]-->
+				<td><!--[ $tarea.Titulo|pnvarprepfordisplay ]--></td>
+				<td><!--[ $tarea.Prioridad|pnvarprepfordisplay ]--></td>				
+				<td><!--[ $tarea.Asignado_A|pnvarprepfordisplay ]--></td>
+				<td><!--[ $tarea.Estado|pnvarprepfordisplay ]--></td>
+				<td><!--[ $tarea.Creacion|date_format:"%d/%m/%Y" ]--></td>
+				<td>
+					<!--[if $tarea.Modificacion ne '0000-00-00']-->
+						<!--[ $tarea.Modificacion|date_format:"%d/%m/%Y" ]-->
+					<!--[/if]-->
+				</td>
+				<td><div align="center">
+					<a href="<!--[pnmodurl modname="Tareas" type="admin" func="display" tid=$tarea.ID]-->">
+					<!--[pnimg modname=core src=14_layer_visible.gif set=icons/extrasmall __title="Display Work" altml=true]-->				
+				</div></td>
+				<td><div align="center">
+					<a href="<!--[pnmodurl modname="Tareas" type="admin" func="modify" tid=$tarea.ID]-->">
+					<!--[pnimg src=icon_edit.png width=16 height=16 __title="Edit Work"]--></a>
+				</div></td>
+				<td><div align="center">
+					<a href="<!--[pnmodurl modname="Tareas" type="admin" func="delete" tid=$tarea.ID]-->">
+					<!--[pnimg src=icon_delete.png width=16 height=16 __title="Delete Work"]-->
+				</div></td>
+			</tr>
+			<!--[/if]-->
+		<!--[/foreach]-->
+		</tbody>
+	</table>
+	
+<!--[* Crear Tarea *]-->
+	<div align="center">
+		<table width="600" border="0">
+			<tr>
+				<td>
+					<form name="anadir" method="post" action="<!--[pnmodurl modname="Tareas" type="admin" func="new"]-->">
+					  <input type="submit" name="Submit" value="<!--[gt text="Create work"]-->">
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<center>
+		<!--[pager display=page rowcount=$pager.numitems limit=$pager.itemsperpage posvar=page]-->
+	</center><br>
+	
+</div>

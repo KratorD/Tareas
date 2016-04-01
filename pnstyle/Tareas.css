@@ -1,0 +1,59 @@
+﻿div.contenido{
+	width: 97%;
+	background: none repeat scroll 0 0 #FFFFDD;
+	border: 1px outset #999966;
+	padding: 0em 1em;
+	position: relative;
+}
+
+div.fechas{
+	color: #999966;
+	float: right;
+	position:relative;
+}
+
+div.fechas p{
+	line-height: 1.7em;
+	margin: 0px;
+}
+
+h2.titulo{
+	margin: 0 0 0.8em;
+	border-bottom: 1px solid #CCCCCC;
+	color: #315C88;
+}
+
+table.propiedades{
+	border-collapse: collapse;
+	border-top: 1px solid #DDDD99;
+	clear: both;
+	table-layout: fixed;
+	width: 100%;
+}
+
+table.propiedades
+tr{
+	border-bottom: 1px dotted #EEEEDD;
+}
+
+table.propiedades
+th{
+	color: #666633;
+	text-align: left;
+	width: 20%;
+	padding: 0.5em 1em;
+}
+
+table.propiedades
+td{
+	width: 30%;
+}
+
+h3.desHead{
+	border-bottom: 1px solid #DDDD99;
+	color: #666633;
+}
+
+div.descripcion{
+	clear: none;
+}

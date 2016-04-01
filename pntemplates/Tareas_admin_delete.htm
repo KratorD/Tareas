@@ -1,0 +1,20 @@
+<!--[*  $Id: Tareas_admin_delete.htm 23981 2008-03-17 10:37:07Z markwest $  *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+<div class="z-admincontainer">
+<div class="z-adminpageicon"><!--[pnimg modname=core src=editdelete.gif set=icons/large __alt="Tareas"]--></div>
+<h2><!--[gt text="Delete work"]--></h2>
+<form class="z-adminform" action="<!--[pnmodurl modname="Tareas" type="admin" func="delete"]-->" method="post" enctype="application/x-www-form-urlencoded">
+<div>
+    <input type="hidden" name="authid" value="<!--[insert name="generateauthkey" module="Tareas"]-->" />
+    <input type="hidden" name="confirmation" value="1" />
+    <input type="hidden" name="tid" value="<!--[$tid|pnvarprepfordisplay]-->" />
+	<div class="z-adminformrow">
+		<p><!--[gt text="Do you want delete this record?"]--></p>
+	</div>
+    <div class="z-adminformrow z-adminformbuttons">
+    <!--[pnbutton src=button_ok.gif set=icons/small __alt="Confirm" __title="Confirm"]-->
+    <a href="<!--[pnmodurl modname=Tareas type=admin func=view]-->"><!--[pnimg modname=core src=button_cancel.gif set=icons/small altml=true titleml=true __alt="Cancel" __title="Cancel"]--></a>
+    </div>
+</div>
+</form>
+</div>

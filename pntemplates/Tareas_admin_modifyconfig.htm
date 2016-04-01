@@ -1,0 +1,26 @@
+<!--[*  $Id: Tareas_admin_modifyconfig.htm 23981 2008-03-17 10:37:07Z markwest $  *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+
+<h2><!--[gt text="Modify configuration"]--></h2>
+
+<form name="fichaTarea" method="post" action="<!--[pnmodurl modname="Tareas" type="admin" func="updateconfig"]-->">
+<fieldset>
+    <legend><!--[gt text="Module settings"]--></legend>
+	
+	<div class="z-formrow">
+		<strong><!--[gt text="Priority"]--></strong>&nbsp;<input name="txtPrioridad" type="text" id="txtPrioridad" size="100" value="<!--[$prioridad]-->">
+		<p class="z-formnote z-informationmsg"><!--[gt text="Use the character / for separate the values"]--></p>
+	</div>
+	
+	<div class="z-formrow">
+		<strong><!--[gt text="Status"]--></strong>&nbsp;<input name="txtEstado" type="text" id="txtEstado" size="100" value="<!--[$estado]-->">
+		<p class="z-formnote z-informationmsg"><!--[gt text="Use the character / for separate the values"]--></p>
+	</div>
+	
+</fieldset>
+
+<div class="z-formbuttons">
+	<input type="submit" name="Submit" value="<!--[gt text="Submit"]-->">
+</div>
+
+</form>

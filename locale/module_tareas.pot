@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Zikula 1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-02 06:27-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pnadmin.php:228
+msgid "Work added sucessfully."
+msgstr ""
+
+#: pnadmin.php:240
+msgid "Error trying insert."
+msgstr ""
+
+#: pnadmin.php:299 pnadmin.php:426 pnadmin.php:471
+msgid "Error! The work do not exists."
+msgstr ""
+
+#: pnadmin.php:383 pnadmin.php:500
+msgid "Error! The work was not updated."
+msgstr ""
+
+#: pnadmin.php:386 pnadmin.php:503
+msgid "Work modify sucessfully."
+msgstr ""
+
+#: pnadmin.php:440
+msgid "Work deleted sucessfully."
+msgstr ""
+
+#: pnadmin.php:443
+msgid "Error! The work was not deleted."
+msgstr ""
+
+#: pnadmin.php:553
+msgid "Done! Module configuration updated."
+msgstr ""
+
+#: pnadminapi.php:63
+msgid "Error! Do not found Web Work."
+msgstr ""
+
+#: pnadminapi.php:114
+msgid "Error! Empty field to try insert a record in DB."
+msgstr ""
+
+#: pnadminapi.php:208
+msgid "No such item found."
+msgstr ""
+
+#: pnadminapi.php:212
+msgid "Error! Deletion attempt failed."
+msgstr ""
+
+#: pnversion.php:14 pnversion.php:15 pntemplates/Tareas_admin_delete.htm:4
+#: pntemplates/Tareas_admin_display.htm:7
+#: pntemplates/Tareas_admin_display.htm:8 pntemplates/Tareas_admin_menu.htm:4
+#: pntemplates/Tareas_admin_modify.htm:7 pntemplates/Tareas_admin_modify.htm:8
+#: pntemplates/Tareas_admin_new.htm:7 pntemplates/Tareas_admin_new.htm:8
+#: pntemplates/Tareas_admin_view.htm:5 pntemplates/Tareas_admin_view.htm:6
+msgid "Tareas"
+msgstr ""
+
+#: pnversion.php:17
+msgid "Web Work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_delete.htm:5
+msgid "Delete work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_delete.htm:12
+msgid "Do you want delete this record?"
+msgstr ""
+
+#: pntemplates/Tareas_admin_delete.htm:15
+msgid "Confirm"
+msgstr ""
+
+#: pntemplates/Tareas_admin_delete.htm:16
+msgid "Cancel"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:9
+msgid "Display work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:13
+msgid "Created on"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:14
+msgid "Last Modification"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:23
+msgid "Created by"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:25
+#: pntemplates/Tareas_admin_modify.htm:23 pntemplates/Tareas_admin_new.htm:19
+#: pntemplates/Tareas_admin_view.htm:57 pntemplates/Tareas_admin_view.htm:106
+msgid "Assigned to"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:29
+#: pntemplates/Tareas_admin_modify.htm:13
+#: pntemplates/Tareas_admin_modifyconfig.htm:11
+#: pntemplates/Tareas_admin_new.htm:13 pntemplates/Tareas_admin_view.htm:56
+#: pntemplates/Tareas_admin_view.htm:105
+msgid "Priority"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:31
+#: pntemplates/Tareas_admin_modify.htm:24 pntemplates/Tareas_admin_new.htm:20
+#: pntemplates/Tareas_admin_view.htm:58 pntemplates/Tareas_admin_view.htm:107
+msgid "State"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:37
+msgid "Reason"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:42
+#: pntemplates/Tareas_admin_modify.htm:35 pntemplates/Tareas_admin_new.htm:28
+msgid "Description"
+msgstr ""
+
+#: pntemplates/Tareas_admin_display.htm:47
+#: pntemplates/Tareas_admin_error.htm:9 pntemplates/Tareas_admin_error.htm:17
+#: pntemplates/Tareas_admin_error.htm:24
+msgid "Go Back"
+msgstr ""
+
+#: pntemplates/Tareas_admin_error.htm:8
+msgid "Fill mandatory fields"
+msgstr ""
+
+#: pntemplates/Tareas_admin_error.htm:16
+#, php-format
+msgid "The user %s do not exist"
+msgstr ""
+
+#: pntemplates/Tareas_admin_error.htm:23
+msgid "The status is incorrect"
+msgstr ""
+
+#: pntemplates/Tareas_admin_menu.htm:6
+msgid "Principal"
+msgstr ""
+
+#: pntemplates/Tareas_admin_menu.htm:9
+msgid "Configuration"
+msgstr ""
+
+#: pntemplates/Tareas_admin_menu.htm:12
+msgid "View finished tasks"
+msgstr ""
+
+#: pntemplates/Tareas_admin_menu.htm:15
+msgid "Get my tasks"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modify.htm:9
+msgid "Modify work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modify.htm:12 pntemplates/Tareas_admin_new.htm:12
+#: pntemplates/Tareas_admin_view.htm:55 pntemplates/Tareas_admin_view.htm:104
+msgid "Name"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modify.htm:37
+#: pntemplates/Tareas_admin_modifyconfig.htm:23
+#: pntemplates/Tareas_admin_new.htm:30
+msgid "Submit"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modifyconfig.htm:4
+msgid "Modify configuration"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modifyconfig.htm:8
+msgid "Module settings"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modifyconfig.htm:12
+#: pntemplates/Tareas_admin_modifyconfig.htm:17
+msgid "Use the character / for separate the values"
+msgstr ""
+
+#: pntemplates/Tareas_admin_modifyconfig.htm:16
+msgid "Status"
+msgstr ""
+
+#: pntemplates/Tareas_admin_new.htm:9 pntemplates/Tareas_admin_view.htm:43
+#: pntemplates/Tareas_admin_view.htm:196
+msgid "Create work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:7
+msgid "Web Work Administration"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:10 pntemplates/Tareas_admin_view.htm:32
+msgid "Filter"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:11
+msgid "Show"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:13 pntemplates/Tareas_admin_view.htm:23
+msgid "All"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:51
+msgid "Unassigned Tasks"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:59 pntemplates/Tareas_admin_view.htm:108
+msgid "Creation"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:60 pntemplates/Tareas_admin_view.htm:109
+msgid "Modification"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:86 pntemplates/Tareas_admin_view.htm:140
+#: pntemplates/Tareas_admin_view.htm:174
+msgid "Display Work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:90
+msgid "Assign me"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:94
+msgid "No items found."
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:100
+msgid "All Tasks"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:144 pntemplates/Tareas_admin_view.htm:178
+msgid "Edit Work"
+msgstr ""
+
+#: pntemplates/Tareas_admin_view.htm:148 pntemplates/Tareas_admin_view.htm:182
+msgid "Delete Work"
+msgstr ""

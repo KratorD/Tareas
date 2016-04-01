@@ -1,0 +1,28 @@
+<!--[* $Id: Tareas_admin_error.htm 31 2008-12-23 20:55:41Z Guite $ *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+
+<div align="center">
+	<!--[* Campos obligatorios *]-->
+	<!--[if $tipo_error EQ 1]-->
+
+		<!--[gt text="Fill mandatory fields"]--><br>
+		<a href="javascript:history.back()"><!--[gt text="Go Back"]--></a>
+		
+	<!--[/if]-->
+	
+	<!--[* El usuario no existe *]-->
+	<!--[if $tipo_error EQ 2]-->
+
+		<!--[gt text="The user %s do not exist" tag1=$user]--><br>
+		<a href="javascript:history.back()"><!--[gt text="Go Back"]--></a>
+		
+	<!--[/if]-->
+	<!--[* Status incorrecto *]-->
+	<!--[if $tipo_error EQ 3]-->
+
+		<!--[gt text="The status is incorrect"]--><br>
+		<a href="javascript:history.back()"><!--[gt text="Go Back"]--></a>
+		
+	<!--[/if]-->
+	
+</div>

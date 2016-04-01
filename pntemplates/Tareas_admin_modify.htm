@@ -1,0 +1,38 @@
+<!--[* $Id: Tareas_admin_modify.htm 31 2011-05-19 Krator $ &nbsp; *]-->
+<!--[include file="Tareas_admin_menu.htm"]-->
+<!--[pnpageaddvar name="javascript" value="modules/Tareas/pnjavascript/Tareas.js"]-->
+
+<!--[* Tarea *]-->
+<div class="z-admincontainer">
+	<div class="z-adminpageicon"><!--[pnimg modname=core src=filenew.gif set=icons/large __alt="Tareas" altml=true]--></div>
+	<h2><!--[gt text="Tareas"]--></h2>
+	<p align="center"><!--[gt text="Modify work"]--></p>
+<form name="fichaTarea" method="post" action="<!--[pnmodurl modname="Tareas" type="admin" func="update" tid=$tarea.ID]-->" enctype="multipart/form-data">
+
+<strong><!--[gt text="Name"]--></strong>&nbsp;<input name="txtNombre" type="text" id="txtNombre" size="30" maxlength="30" value="<!--[$tarea.Titulo]-->"><br>
+<strong><!--[gt text="Priority"]--></strong>&nbsp;
+	<select name="cmbPrioridad" id="cmbPrioridad">
+	<!--[ foreach from=$prioridades item=prioridad name=nVuelta ]-->
+		<!--[if $prioridad eq $tarea.Prioridad]-->
+			<option selected value="<!--[ $prioridad ]-->"><!--[ $prioridad ]--></option>
+		<!--[else]-->
+			<option value="<!--[ $prioridad ]-->"><!--[ $prioridad ]--></option>
+		<!--[/if]-->
+	<!--[ /foreach ]-->
+	</select><br>
+<strong><!--[gt text="Assigned to"]--></strong>&nbsp;<input name="txtAsignado" type="text" id="txtAsignado" size="25" maxlength="25" value="<!--[$tarea.Asignado_A]-->"><br>
+<strong><!--[gt text="State"]--></strong>&nbsp;
+	<select name="cmbEstado" id="cmbEstado" onchange="crear_motivo(this)">
+	<!--[ foreach from=$estados item=estado name=nVuelta ]-->
+		<!--[if $estado eq $tarea.Estado]-->
+			<option selected value="<!--[ $estado ]-->"><!--[ $estado ]--></option>
+		<!--[else]-->
+			<option value="<!--[ $estado ]-->"><!--[ $estado ]--></option>
+		<!--[/if]-->
+	<!--[ /foreach ]-->
+	</select><br>
+	<div id="capa_motivo"></div>
+<strong><!--[gt text="Description"]--></strong>:<br><textarea name="txtDesc" cols="75" rows="2" id="txtDesc" onKeyDown="valida_longitud(this)" onKeyUp="valida_longitud(this)"><!--[$tarea.Descripcion]--></textarea><br>
+
+<input type="submit" name="Submit" value="<!--[gt text="Submit"]-->">
+</form>

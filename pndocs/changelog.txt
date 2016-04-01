@@ -1,0 +1,47 @@
+// File : $Id: changelog.txt 31 2008-12-23 20:55:41Z Guite $
+// ----------------------------------------------------------------------
+// POSTNUKE Content Management System
+// Copyright (C) 2001 by the PostNuke Development Team.
+// http://www.postnuke.com/
+// ----------------------------------------------------------------------
+// Based on:
+// PHP-NUKE Web Portal System - http://phpnuke.org/
+// Thatware - http://thatware.org/
+// ----------------------------------------------------------------------
+// LICENSE
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License (GPL)
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// To read the license please visit http://www.gnu.org/copyleft/gpl.html
+// ----------------------------------------------------------------------
+// Original Author of file: Chestnut ! - http://dev.pnconcept.com
+// Purpose of file:  Blank mod ChangeLog
+// ----------------------------------------------------------------------
+
+//Futuras versiones
+2.0 - Posibilidad de asignar una tarea a más de 1 persona
+    - Historial de cambios
+    - Mejorar el control de estados de tarea
+
+//Versión actual
+1.6 - Las tareas Finalizadas no aparecen si no se especifica (especificamente) :-)
+    - Se ha añadido un botón para ver especificamente las tareas Finalizadas.
+    - Las tareas Detenidas aparecen al final del listado de cada página.
+    - Al asignar una tarea, enviar un email a las personas asignadas
+
+
+1.5 - Incluir un botón para ver las tareas asignadas a uno mismo
+    - Las tareas no asignadas aparecerán en un listado aparte para poderlas asignarselas a uno mismo con un solo click.
+    - Arreglar el problema de la salidas por pantalla de las fechas.
+    - Asignación de colores por criticidad.
+
+
+1.0 - Initial Release
